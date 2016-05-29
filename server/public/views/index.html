@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>What's Your Favorite Pet?!</title>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <!-- Angular -->
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+    <!-- Client App and controllers -->
+    <script type="text/javascript" src="/scripts/clientapp.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/home_app.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/pet_app.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/favorite_app.js"></script>
+
+</head>
+<body ng-app="myApp">
+     <header ng-include="'/views/templates/header.html'" class="jumbotron text-center"></header>
+
+     <div ng-include="'/views/templates/nav.html'"></div>
+
+     <main ng-view></main>
+
+     <footer ng-include="'/views/templates/footer.html'"></footer>
+</body>
+</html>
