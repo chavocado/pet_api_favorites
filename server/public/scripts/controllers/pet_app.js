@@ -1,4 +1,5 @@
 myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
+  console.log('pet controller running');
   var key = '7a407777e9ad874499e799cacb8a61ac';
   var baseURL = 'http://api.petfinder.com/';
   $scope.breed = '';
