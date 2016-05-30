@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 // modules
-//var movies = require('./routes/movies');
 var index = require('./routes/index');
+var favorite = require('./routes/favorite');
 
 // middleware
 app.use(express.static(path.join(__dirname, './public')));
@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // express routes
-//app.use('/movies', movies);
-app.use('/', index);
 
+app.use('/', index);
+app.use('/favorite', favorite);
 
 
 // mongoose connection

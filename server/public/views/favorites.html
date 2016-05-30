@@ -1,0 +1,17 @@
+<div class="favorite">
+<h1 class="title">Favorites</h1>
+</div>
+<div>
+    <h3>Favorites: {{favs.length}}</h3>
+</div>
+<div class="row" ng-repeat="favorite in favs">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="mainContainer">
+        <h3>{{favorite.name}}</h3>
+        <h4>ID: {{favorite.petID}}</h4>
+        <img ng-src="{{favorite.image}}"/>
+        <p>Location: {{favorite.city}}, {{favorite.state}}</p>
+      </div>
+        <p>{{favorite.description}}</p>
+      </div>
+    </div>

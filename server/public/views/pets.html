@@ -1,0 +1,41 @@
+<div class="petpage">
+<h1>Pet Finder!</h1>
+</div>
+
+<div class="row animals">
+    <div class="col-md-6 col-md-offset-3">
+    <form>
+        <label for="animalType">Animal Type: </label>
+        <select name="animalType" id="animalType" ng-model="animal" ng-change="changeAnimal()">
+          <option value="">Select Type</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="smallfurry">Small Furry</option>
+          <option value="bird">Bird</option>
+          <option value="reptile">Reptile</option>
+          <option value="horse">Horse</option>
+          <option value="pig">Pig</option>
+          <option value="barnyard">Barnyard</option>
+        </select>
+        <button ng-hide="hidden" ng-click="getRandomPet()">Find: {{animal}}</button>
+    </form>
+    </div>
+    <div>
+        <h3>Favorites: {{favs.length}}</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="mainContainer">
+        <h2 class="petInfo">{{pet.name.$t}}</h2>
+        <img ng-src="{{pet.media.photos.photo[2].$t}}"/>
+        <h4 ng-hide="hidden" class="petInfo">{{pet.contact.city.$t}} {{pet.contact.state.$t}}</h4>
+      </div>
+        <p>{{pet.description.$t}}</p>
+
+        <form ng-show="pet.id.$t">
+            <button ng-click="submitFavorite()" class="btn btn-info">Favorite</button>
+        </form>
+    </div>
+</div>
