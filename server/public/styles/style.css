@@ -4,3 +4,7 @@ body{
 .content{
   text-align: center;
 }
+.fav{
+    border-width:5px;
+    border-style:inset;
+}

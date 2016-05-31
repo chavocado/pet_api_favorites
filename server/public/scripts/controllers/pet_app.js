@@ -6,14 +6,15 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
   // $scope.breed = '';
   $scope.hidden = false;
   $scope.favs = [];
+  $scope.animal = "";
   getFavorites();
 
-  $scope.changeAnimal = function() {
-        console.log($scope.animal);
-        if($scope.animal !== '') {
-            $scope.getRandomPet();
-        }
-    };
+  // $scope.changeAnimal = function() {
+  //       console.log($scope.animal);
+  //       if($scope.animal !== null) {
+  //           $scope.getRandomPet();
+  //       }
+  //   };
 
   $scope.getRandomPet = function() {
       var baseURL = 'http://api.petfinder.com/';
