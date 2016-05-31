@@ -3,6 +3,9 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
   //api key
   var key = '7a407777e9ad874499e799cacb8a61ac';
   var baseURL = 'http://api.petfinder.com/';
+  var giphyKey = 'dc6zaTOxFJmzC';
+  var giphyBaseURL = 'http://api.giphy.com/';
+
   // $scope.breed = '';
   $scope.hidden = false;
   $scope.favs = [];
@@ -15,6 +18,21 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
   //           $scope.getRandomPet();
   //       }
   //   };
+  $scope.getRandomPetGif = function () {
+     var query = '/v1/gifs/random';
+     query += '?api_key=' + giphyKey;
+
+     query += '&tag=' + 'cute+animals';
+
+     var request = giphyBaseURL + encodeURI(query) + '&callback=JSON_CALLBACK';
+     console.log(request);
+     $http.jsonp(request).then(
+         function(response) {
+         console.log(response.data);
+       $scope.animalGif = response.data.data.fixed_height_downsampled_url;
+       }
+     );
+   };
 
   $scope.getRandomPet = function() {
       var baseURL = 'http://api.petfinder.com/';
