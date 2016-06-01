@@ -22,7 +22,7 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
      var query = '/v1/gifs/random';
      query += '?api_key=' + giphyKey;
 
-     query += '&tag=' + 'cute+animals';
+     query += '&tag=' + 'baby+animals';
 
      var request = giphyBaseURL + encodeURI(query) + '&callback=JSON_CALLBACK';
      console.log(request);
